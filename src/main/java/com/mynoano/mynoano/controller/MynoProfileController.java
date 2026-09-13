@@ -31,9 +31,9 @@ public class MynoProfileController {
             Authentication authentication
     ) {
 
-        String username = authentication.getName();
+        Long userId = Long.valueOf(authentication.getName());
 
-        User user = userRepository.findByUsername(username)
+        User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         MynoProfileResponse response =

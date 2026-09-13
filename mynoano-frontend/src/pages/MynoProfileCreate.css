@@ -1,0 +1,188 @@
+
+.myno-profile-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f7f2ff, #eef7ff);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main card */
+
+.myno-profile-card {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.10);
+}
+
+/* Header */
+
+.myno-profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.myno-profile-logo {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.myno-profile-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #222;
+}
+
+.myno-profile-header p {
+    margin-top: 8px;
+    color: #777;
+    font-size: 15px;
+}
+
+/* Form */
+
+.myno-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Field */
+
+.myno-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.myno-form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs */
+.myno-form-group input,
+.myno-form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    padding: 14px 15px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    outline: none;
+
+    background-color: #ffffff;
+
+    /* IMPORTANT */
+    color: #000000;
+    -webkit-text-fill-color: #000000;
+
+    opacity: 1;
+
+    transition: all 0.2s ease;
+}
+
+.myno-form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Focus */
+
+.myno-form-group input:focus,
+.myno-form-group textarea:focus {
+    border-color: #8b5cf6;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+/* Placeholder */
+
+.myno-form-group input::placeholder,
+.myno-form-group textarea::placeholder {
+    color: #222;
+}
+
+/* Create button */
+
+.myno-create-button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 15px;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.myno-create-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+.myno-create-button:active {
+    transform: translateY(0);
+}
+
+.myno-create-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Success / error message */
+
+.myno-profile-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #16a34a;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .myno-profile-page {
+        padding: 20px 15px;
+    }
+
+    .myno-profile-card {
+        padding: 28px 22px;
+        border-radius: 20px;
+    }
+
+    .myno-profile-logo {
+        font-size: 36px;
+    }
+
+    .myno-profile-header h1 {
+        font-size: 24px;
+    }
+}
+
+.myno-form-group textarea {
+    color: #000000;
+    -webkit-text-fill-color: #000000;
+    background-color: #ffffff;
+}

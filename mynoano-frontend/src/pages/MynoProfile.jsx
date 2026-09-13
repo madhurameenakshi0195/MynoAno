@@ -1,12 +1,9 @@
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import api from "../services/api";
+import api from "../services/api.js";
 import "./MynoProfile.css";
 
 function MynoProfile() {
-
-    const { userId } = useParams();
 
     const [profile, setProfile] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -14,12 +11,13 @@ function MynoProfile() {
 
     useEffect(() => {
 
-        const fetchProfile = async () => {
+        const loadProfile = async () => {
 
             try {
 
+                // For now we are using user ID 5
                 const response = await api.get(
-                    `/api/myno/profile/${userId}`
+                    "/api/myno/profile/5"
                 );
 
                 setProfile(response.data);
@@ -28,123 +26,82 @@ function MynoProfile() {
 
                 console.error(error);
 
-                setError("MYNO profile not found");
+                setError("Could not load MYNO profile");
 
             } finally {
 
                 setLoading(false);
+
             }
         };
 
-        fetchProfile();
+        loadProfile();
 
-    }, [userId]);
+    }, []);
 
     if (loading) {
         return (
-            <div className="myno-page">
-                <div className="myno-loading">
-                    Loading MYNO...
-                </div>
+            <div className="myno-profile-loading">
+                Loading MYNO profile...
             </div>
         );
     }
 
     if (error) {
         return (
-            <div className="myno-page">
-                <div className="myno-error">
-                    {error}
-                </div>
+            <div className="myno-profile-error">
+                {error}
             </div>
         );
     }
 
     return (
-        <div className="myno-page">
+        <div className="myno-profile-page">
 
             <div className="myno-profile-card">
 
-                {/* Profile Header */}
-                <div className="myno-header">
+                <div className="myno-profile-picture">
 
-                    <img
-                        className="myno-profile-picture"
-                        src={profile.profilePicture}
-                        alt={profile.displayName}
-                    />
+                    {profile.profilePicture ? (
+                        <img
+                            src={profile.profilePicture}
+                            alt={profile.displayName}
+                        />
+                    ) : (
+                        <span>
+                            {profile.displayName
+                                ?.charAt(0)
+                                .toUpperCase()}
+                        </span>
+                    )}
 
-                    <div className="myno-profile-info">
+                </div>
 
-                        <h1>{profile.displayName}</h1>
+                <h1>
+                    {profile.displayName}
+                </h1>
 
-                        <p className="myno-username">
-                            @myno_{userId}
-                        </p>
+                <p className="myno-profile-bio">
+                    {profile.bio || "No bio yet."}
+                </p>
 
-                        <p className="myno-bio">
-                            {profile.bio}
-                        </p>
+                <div className="myno-profile-info">
 
+                    <div>
+                        <span>MYNO ID</span>
+                        <strong>#{profile.id}</strong>
+                    </div>
+
+                    <div>
+                        <span>USER ID</span>
+                        <strong>#{profile.userId}</strong>
                     </div>
 
                 </div>
 
-                {/* Profile Stats */}
-                <div className="myno-stats">
-
-                    <div className="myno-stat">
-                        <strong>0</strong>
-                        <span>Friends</span>
-                    </div>
-
-                    <div className="myno-stat">
-                        <strong>0</strong>
-                        <span>Events</span>
-                    </div>
-
-                    <div className="myno-stat">
-                        <strong>0</strong>
-                        <span>Photos</span>
-                    </div>
-
-                </div>
-
-                {/* Actions */}
-                <div className="myno-actions">
-
-                    <button className="myno-connect-btn">
-                        Connect
-                    </button>
-
-                    <button className="myno-message-btn">
-                        Message
-                    </button>
-
-                </div>
-
-                {/* Photos Section */}
-                <div className="myno-section">
-
-                    <h2>Photos</h2>
-
-                    <div className="myno-photo-grid">
-
-                        <div className="myno-photo-placeholder">
-                            +
-                        </div>
-
-                        <div className="myno-photo-placeholder">
-                            +
-                        </div>
-
-                        <div className="myno-photo-placeholder">
-                            +
-                        </div>
-
-                    </div>
-
-                </div>
+                <button className="myno-edit-button">
+                    Edit Profile
+                </button>
 
             </div>
 

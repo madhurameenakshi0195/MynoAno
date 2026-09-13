@@ -1,5 +1,7 @@
+
 import { useState } from "react";
-import api from "../services/api";
+import api from "../services/api.js";
+import "./MynoProfileCreate.css";
 
 function MynoProfileCreate() {
 
@@ -54,59 +56,104 @@ function MynoProfileCreate() {
     };
 
     return (
-        <div>
+        <div className="myno-profile-page">
 
-            <h1>Create Your MYNO Profile</h1>
+            <div className="myno-profile-card">
 
-            <form onSubmit={handleSubmit}>
+                <div className="myno-profile-header">
 
-                <div>
-                    <label>Display Name</label>
+                    <div className="myno-profile-logo">
+                        MYNO
+                    </div>
 
-                    <input
-                        type="text"
-                        name="displayName"
-                        value={form.displayName}
-                        onChange={handleChange}
-                        placeholder="Enter your display name"
-                    />
+                    <h1>Create Your Profile</h1>
+
+                    <p>
+                        Tell people a little about yourself.
+                    </p>
+
                 </div>
 
-                <div>
-                    <label>Bio</label>
+                <form
+                    className="myno-profile-form"
+                    onSubmit={handleSubmit}
+                >
 
-                    <textarea
-                        name="bio"
-                        value={form.bio}
-                        onChange={handleChange}
-                        placeholder="Tell people about yourself"
-                    />
-                </div>
+                    <div className="myno-form-group">
 
-                <div>
-                    <label>Profile Picture URL</label>
+                        <label>
+                            Display Name
+                        </label>
 
-                    <input
-                        type="text"
-                        name="profilePicture"
-                        value={form.profilePicture}
-                        onChange={handleChange}
-                        placeholder="Paste image URL"
-                    />
-                </div>
+                        <input
+                            type="text"
+                            name="displayName"
+                            value={form.displayName}
+                            onChange={handleChange}
+                            placeholder="What should people call you?"
+                            required
+                        />
 
-                <button type="submit" disabled={loading}>
+                    </div>
 
-                    {loading
-                        ? "Creating..."
-                        : "Create MYNO Profile"
-                    }
+                    <div className="myno-form-group">
 
-                </button>
+                        <label>
+                            Bio
+                        </label>
 
-            </form>
+                        <textarea
+                            name="bio"
+                            value={form.bio}
+                            onChange={(e) => {
+                                console.log("BIO:", e.target.value);
 
-            {message && <p>{message}</p>}
+                                setForm({
+                                    ...form,
+                                    bio: e.target.value
+                                });
+                            }}
+                            placeholder="Tell people something about yourself..."
+                        />
+
+                    </div>
+
+                    <div className="myno-form-group">
+
+                        <label>
+                            Profile Picture URL
+                        </label>
+
+                        <input
+                            type="text"
+                            name="profilePicture"
+                            value={form.profilePicture}
+                            onChange={handleChange}
+                            placeholder="Paste an image URL"
+                        />
+
+                    </div>
+
+                    <button
+                        className="myno-create-button"
+                        type="submit"
+                        disabled={loading}
+                    >
+                        {loading
+                            ? "Creating..."
+                            : "Create MYNO Profile"
+                        }
+                    </button>
+
+                </form>
+
+                {message && (
+                    <p className="myno-profile-message">
+                        {message}
+                    </p>
+                )}
+
+            </div>
 
         </div>
     );

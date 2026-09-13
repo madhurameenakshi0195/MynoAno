@@ -1,8 +1,6 @@
 package com.mynoano.mynoano.entity;
 
 import jakarta.persistence.*;
-import lombok.Setter;
-import org.jspecify.annotations.Nullable;
 
 import java.time.LocalDateTime;
 
@@ -14,7 +12,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter
     @Column(nullable = false, unique = true)
     private String username;
 
@@ -32,6 +29,33 @@ public class User {
         createdAt = LocalDateTime.now();
     }
 
+    // =========================
+    // GETTERS
+    // =========================
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    // =========================
+    // SETTERS
+    // =========================
 
     public void setUsername(String username) {
         this.username = username;
@@ -47,25 +71,5 @@ public class User {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public String getUsername() {
-        return "";
-    }
-
-    public Long getId() {
-        return 0L;
-    }
-
-    public String getEmail() {
-        return "";
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return null;
-    }
-
-    public @Nullable String getPassword() {
-        return "";
     }
 }

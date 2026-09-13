@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Register from "./pages/register";
 import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import MynoProfileCreate from "./pages/MynoProfileCreate";
+
+
+import MynoProfileCreate from "./pages/MynoProfileCreate.jsx";
 import MynoProfile from "./pages/MynoProfile";
 
 function App() {
@@ -23,10 +24,13 @@ function App() {
                     element={<Login />}
                 />
 
+
                 <Route
-                    path="/profile"
-                    element={<Profile />}
+                    path="/myno/profile"
+                    element={<MynoProfile />}
                 />
+
+
 
                 <Route
                     path="/myno/create"
