@@ -1,0 +1,264 @@
+
+    /* ================================
+       MYNO PROFILE PAGE
+    ================================ */
+
+.myno-page {
+    min-height: 100vh;
+    background: #f5f5f7;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   PROFILE CARD
+================================ */
+
+.myno-profile-card {
+    width: 100%;
+    max-width: 850px;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================================
+   PROFILE HEADER
+================================ */
+
+.myno-header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+
+.myno-profile-picture {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.myno-profile-info {
+    flex: 1;
+}
+
+
+.myno-profile-info h1 {
+    margin: 0;
+    font-size: 34px;
+    color: #111;
+    font-weight: 700;
+}
+
+
+.myno-username {
+    margin: 7px 0;
+    color: #777;
+    font-size: 15px;
+}
+
+
+.myno-bio {
+    margin-top: 18px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   STATS
+================================ */
+
+.myno-stats {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 40px;
+    padding: 25px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+
+.myno-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.myno-stat strong {
+    font-size: 24px;
+    color: #111;
+}
+
+
+.myno-stat span {
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.myno-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+
+.myno-actions button {
+    flex: 1;
+    padding: 13px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.myno-connect-btn {
+    border: none;
+    background: #111;
+    color: white;
+}
+
+
+.myno-connect-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+
+.myno-message-btn {
+    border: 1px solid #ddd;
+    background: white;
+    color: #111;
+}
+
+
+.myno-message-btn:hover {
+    background: #f5f5f5;
+}
+
+
+/* ================================
+   PHOTOS
+================================ */
+
+.myno-section {
+    margin-top: 40px;
+}
+
+
+.myno-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+.myno-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+
+.myno-photo-placeholder {
+    height: 180px;
+    background: #f0f0f2;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35px;
+    color: #aaa;
+}
+
+
+/* ================================
+   LOADING
+================================ */
+
+.myno-loading {
+    font-size: 20px;
+    color: #555;
+    margin-top: 100px;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.myno-error {
+    background: white;
+    padding: 30px 50px;
+    border-radius: 15px;
+    color: #d33;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+    .myno-page {
+        padding: 20px 10px;
+    }
+
+    .myno-profile-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .myno-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .myno-profile-picture {
+        width: 140px;
+        height: 140px;
+    }
+
+    .myno-profile-info h1 {
+        font-size: 28px;
+    }
+
+    .myno-stats {
+        gap: 35px;
+    }
+
+    .myno-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .myno-photo-placeholder {
+        height: 140px;
+    }
+}
