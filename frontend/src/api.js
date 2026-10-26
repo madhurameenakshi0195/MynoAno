@@ -14,6 +14,10 @@ export async function api(path, { method = 'GET', body, form } = {}) {
     data = JSON.stringify(body);
   }
   const res = await fetch('/api' + path, { method, headers, body: data });
+
+  console.log("Status:", res.status);
+  console.log("Response:", await res.clone().text());
+
   if (res.status === 401 && token && !path.startsWith('/auth')) {
     setToken(null);
     window.location.href = '/login';
