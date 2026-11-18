@@ -13,7 +13,13 @@ export async function api(path, { method = 'GET', body, form } = {}) {
     headers['Content-Type'] = 'application/json';
     data = JSON.stringify(body);
   }
-  const res = await fetch('/api' + path, { method, headers, body: data });
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
+  const res = await fetch(API_BASE_URL + '/api' + path, {
+    method,
+    headers,
+    body: data
+  });
 
   console.log("Status:", res.status);
   console.log("Response:", await res.clone().text());
