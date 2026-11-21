@@ -2,6 +2,7 @@
 package com.mynoano.service;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -9,7 +10,9 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Map;
 import java.util.List;
 
+
 @Service
+@Primary
 public class BrevoOtpSender implements OtpSender {
 
     @Value("${brevo.api-key}")
