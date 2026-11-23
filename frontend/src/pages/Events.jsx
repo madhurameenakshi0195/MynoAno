@@ -71,7 +71,7 @@ function BusyMap({ groups, center, radius, onOpen }) {
     <>
       <div className="card" style={{ padding: 8 }}>
         <svg viewBox="0 0 300 300" style={{ width: '100%', display: 'block' }}>
-          <defs><radialGradient id="hg"><stop offset="0" stopColor="#ff6a00" stopOpacity=".75" /><stop offset="1" stopColor="#ff6a00" stopOpacity="0" /></radialGradient></defs>
+          <defs><radialGradient id="hg"><stop offset="0" stopColor="#C8102E" stopOpacity=".75" /><stop offset="1" stopColor="#C8102E" stopOpacity="0" /></radialGradient></defs>
           {[1, 0.66, 0.33].map((f) => <circle key={f} cx="150" cy="150" r={125 * f} fill="none" stroke="#2a2a2a" strokeDasharray="3 5" />)}
           <text x="150" y="21" textAnchor="middle" fontSize="9" fill="#9b948a">{radius} mi</text>
           <circle cx="150" cy="150" r="5" fill="#fff" />
@@ -85,7 +85,7 @@ function BusyMap({ groups, center, radius, onOpen }) {
               <g key={g.venueGroup} tabIndex={0} role="button" aria-label={`${g.venueGroup}, ${g.events.length} events`} style={{ cursor: 'pointer' }}
                  onClick={() => onOpen(g)} onKeyDown={(e) => e.key === 'Enter' && onOpen(g)}>
                 <circle className={live ? 'pulse2' : ''} cx={x} cy={y} r={r * 2.4} fill="url(#hg)" />
-                <circle cx={x} cy={y} r={r} fill="#ff6a00" stroke="#fff" strokeWidth={live ? 2 : 0} />
+                <circle cx={x} cy={y} r={r} fill="#C8102E" stroke="#fff" strokeWidth={live ? 2 : 0} />
                 <text x={x} y={y + 4} textAnchor="middle" fontSize="11" fontWeight="800" fill="#000">{g.events.length}</text>
                 <text x={x} y={y + r + 13} textAnchor="middle" fontSize="9.5" fontWeight="700" fill="#f6f2ec">{name}</text>
               </g>

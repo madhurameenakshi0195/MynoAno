@@ -1,11 +1,11 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 export const G = [
-  'linear-gradient(160deg,#ff8a1f,#7a2a00 70%,#1a0a00)',
-  'linear-gradient(160deg,#ffb066,#c24a00 60%,#2b0f00)',
-  'linear-gradient(160deg,#ff5a00,#5a1a00 65%,#000)',
-  'linear-gradient(160deg,#ffd0a0,#e86a10 55%,#331400)',
-  'linear-gradient(160deg,#ff7a2e,#2a2a2a 70%,#000)',
+  'linear-gradient(160deg,#C8102E,#5A000B 70%,#160609)',
+  'linear-gradient(160deg,#E23D50,#8B0000 60%,#26070D)',
+  'linear-gradient(160deg,#8B0000,#3A0008 65%,#080607)',
+  'linear-gradient(160deg,#F0A0A5,#A51D35 55%,#310A12)',
+  'linear-gradient(160deg,#A80F2D,#292020 70%,#080607)',
 ];
 
 export const fmt = (t) => new Date(t).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });

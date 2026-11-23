@@ -79,3 +79,44 @@ nav a svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;st
 nav a.on:after{content:"";width:5px;height:5px;border-radius:50%;background:var(--or);box-shadow:0 0 8px var(--or)}
 a{color:var(--or)}
 
+
+
+/* MYNOANO BLOOD-RED THEME — shared red identity for MYNO and ANO */
+:root{
+  --bg:#0B0809;
+  --s1:#171113;
+  --s2:#24171B;
+  --ln:#42232A;
+  --or:#8B0000;
+  --or2:#E23D50;
+  --tx:#F5E9E6;
+  --mu:#B6A4A5;
+}
+body{background:#080607}
+#app{background:radial-gradient(120% 55% at 50% -8%,#300910 0%,#0B0809 62%)}
+.btn{background:linear-gradient(110deg,#8B0000,#C8102E);color:#FFF5F3;box-shadow:0 8px 24px #8B000044}
+.btn.g{background:#211619;color:var(--tx);border:1px solid #51252E}
+.in{background:#171113;border-color:#42232A}
+.in:focus{border-color:#C8102E}
+.seg button.on,.chip.on,.pill.o{background:#8B0000;border-color:#C8102E;color:#FFF5F3}
+.chip.on{box-shadow:0 0 14px #C8102E33}
+nav{background:#080607eF;border-top-color:#382027}
+nav button.on,nav a.on{color:#FF5368}
+nav button.on:after,nav a.on:after{background:#C8102E;box-shadow:0 0 9px #C8102E}
+.logo .or{background:linear-gradient(90deg,#8B0000,#F0445D);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{background:linear-gradient(90deg,#FFF5F3 25%,#E23D50);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:linear-gradient(155deg,#211619,#110D0F);border-color:#382027;box-shadow:0 10px 28px #0009}
+.av{color:#FFF5F3;box-shadow:0 0 0 2px #0B0809,0 0 0 3px #C8102E66}
+.badge{border-color:#8B0000;color:#FF7A89}
+.toast{background:#8B0000;color:#FFF5F3}
+.anobar{background:linear-gradient(90deg,#350811,#10090B);border-color:#6B1020}
+.sw.on{background:#8B0000;border-color:#C8102E}
+.err{color:#FF7888}
+/* ANO stays in the same family, but uses a deeper maroon atmosphere. */
+.ano{--or:#760014;--or2:#D52B48;--s1:#160D10;--s2:#241217;--ln:#4A202B;background:radial-gradient(90% 55% at 80% 0%,#3B0916 0%,#0B0809 72%),#0B0809}
+.ano .card{background:linear-gradient(155deg,#211116,#100B0E);border-color:#4A202B}
+.ano nav{background:#0B0809ED;border-top-color:#4A202B}
+.ano .btn{background:linear-gradient(110deg,#650010,#A5102D);color:#FFF5F3}
+.ano .embers i{background:#C8102E;box-shadow:0 0 9px #E23D50}
+.embers i{background:#C8102E;box-shadow:0 0 9px #E23D50}
+.portal{background:radial-gradient(circle at 50% 85%,#E23D50 0%,#8B0000 36%,#080607 72%)}
